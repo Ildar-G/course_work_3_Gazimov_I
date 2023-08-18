@@ -39,7 +39,7 @@ def get_executed(operations):
     for item in operations:
         if item.get('state') == 'EXECUTED':
             executed_list.append(item)
-    return result_executed_list
+    return executed_list
 
 
 def mask_card(card):
