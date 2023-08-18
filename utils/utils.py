@@ -19,3 +19,12 @@ def date_format(date):
     str_date = datetime.datetime.strptime(date, '%Y-%m-%dT%H:%M:%S.%f')
     formated_date = str_date.strftime('%d.%m.%Y')
     return formated_date
+
+
+def sort_list(operations):
+    """
+    Функция cортирует список словарей по дате
+    и возвращает отсортированный список.
+        """
+    operations.sort(key=lambda x: x.get('date'), reverse=True)
+    return operations
