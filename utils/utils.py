@@ -40,3 +40,16 @@ def get_executed(operations):
         if item.get('state') == 'EXECUTED':
             executed_list.append(item)
     return result_executed_list
+
+
+def mask_card(card):
+    """
+    Функция принимает строку и скрывает элементы по маске
+    """
+    if not card:
+        return ''
+    card_data = card.split(' ')
+    if card_data[0] == 'Счет':
+        return card_data[0] + '**' + card_data[1][-4:]
+    card_number = card_data[-1][:4] + ' ' + card_data[-1][4:6] + '** **** ' + card_data[-1][-4:]
+    return ' '.join(card_data[:-1]) + ' ' + card_number
