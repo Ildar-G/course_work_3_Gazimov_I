@@ -28,3 +28,15 @@ def sort_list(operations):
         """
     operations.sort(key=lambda x: x.get('date'), reverse=True)
     return operations
+
+
+def get_executed(operations):
+    """
+    Функция принимсает список словарей
+    фильтрует по состоянию EXECUTED и возвращает отфильтрованный список
+       """
+    executed_list = []
+    for item in operations:
+        if item.get('state') == 'EXECUTED':
+            executed_list.append(item)
+    return result_executed_list
