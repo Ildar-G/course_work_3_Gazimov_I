@@ -1,6 +1,7 @@
 import json
 import datetime
 
+
 def load_operations(filename):
     """
     Функция принимает в качестве аргумента строку из файла operations json

@@ -1,5 +1,6 @@
 from main import main
 
+
 def test_main():
     assert main("../operations.json") == [{
         'date': '2019-11-05T12:04:13.781725',

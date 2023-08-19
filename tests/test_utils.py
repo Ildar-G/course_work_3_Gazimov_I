@@ -1,10 +1,10 @@
-import json
 import pytest
+
 from utils.utils import load_operations, sort_list, get_executed, date_format, mask_card
 
 
 def test_load_operations():
-    assert list == type(load_operations('../operations.json'))
+    assert list == type(load_operations("../operations.json"))
 
 
 def test_sort_list():
@@ -33,6 +33,7 @@ def test_sort_list():
             "date": "2018-09-12T21:27:25.241689",
         }
     ]
+
 
 def test_date_format():
     assert date_format("2018-09-12T21:27:25.241689") == "12.09.2018"
@@ -80,6 +81,7 @@ def test_get_executed():
             "date": "2019-12-08T22:46:21.935582",
         },
     ]
+
 
 @pytest.mark.parametrize('str_card, mask', [('Счет 44812258784861134719', 'Счет**4719'),
                                             ('Visa Classic 6831982476737658', 'Visa Classic 6831 98** **** 7658'),
