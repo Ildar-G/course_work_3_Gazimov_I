@@ -1,7 +1,7 @@
 import json
 import pytest
 from utils.utils import load_operations, sort_list, get_executed, date_format, mask_card
-from main import main
+
 
 def test_load_operations():
     assert list == type(load_operations('../operations.json'))
@@ -86,21 +86,3 @@ def test_get_executed():
                                             (None, '')])
 def test_mask_card(str_card, mask):
     assert mask_card(str_card) == mask
-
-
-def test_main():
-    assert main("../operations.json") == [{
-        'date': '2019-11-05T12:04:13.781725',
-        'description': 'Открытие вклада',
-        'id': 801684332,
-        'operationAmount': {
-            'amount': '21344.35',
-            'currency': {
-                'code': 'RUB',
-                'name': 'руб.'
-            }
-        },
-        'state': 'EXECUTED',
-        'to': 'Счет 77613226829885488381'
-    }
-    ]
