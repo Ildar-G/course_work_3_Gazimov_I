@@ -33,3 +33,7 @@ def test_sort_list():
             "date": "2018-09-12T21:27:25.241689",
         }
     ]
+
+def test_date_format():
+    assert date_format("2018-09-12T21:27:25.241689") == "12.09.2018"
+    assert date_format("2019-07-03T18:35:29.512364") == "03.07.2019"
