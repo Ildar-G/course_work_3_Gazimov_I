@@ -80,3 +80,11 @@ def test_get_executed():
             "date": "2019-12-08T22:46:21.935582",
         },
     ]
+
+@pytest.mark.parametrize('str_card, mask', [('Счет 44812258784861134719', 'Счет**4719'),
+                                            ('Visa Classic 6831982476737658', 'Visa Classic 6831 98** **** 7658'),
+                                            (None, '')])
+def test_mask_card(str_card, mask):
+    assert mask_card(str_card) == mask
+
+
